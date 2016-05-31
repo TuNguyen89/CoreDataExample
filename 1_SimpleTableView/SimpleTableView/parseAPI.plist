@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Parse-Base-URL</key>
+	<string>https://api.parse.com</string>
+	<key>Product-Relative-URL</key>
+	<string>1/classes/Product</string>
+	<key>Brand-Relative-URL</key>
+	<string>1/classes/Brand</string>
+	<key>X-Parse-Application-Id</key>
+	<string>MlR6vYpYvLRxfibxE5cg0e73jXojL6jWFqXU6F8L</string>
+	<key>X-Parse-Rest-Api-Key</key>
+	<string>7BTXVX1qUXKUCnsngL8LxhpEHKQ8KKd798kKpD9W</string>
+	<key>Content-Type</key>
+	<string>application/json</string>
+	<key>Cache-Control</key>
+	<string>no-cache</string>
+</dict>
+</plist>

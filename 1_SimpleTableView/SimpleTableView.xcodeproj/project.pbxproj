@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		286F762C177DDE930001B043 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286F762B177DDE930001B043 /* Images.xcassets */; };
+		28A03C00171109C600EAB3E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28A03BFE171109C600EAB3E2 /* InfoPlist.strings */; };
+		28A03C02171109C600EAB3E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A03C01171109C600EAB3E2 /* main.m */; };
+		28A03C06171109C600EAB3E2 /* APLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A03C05171109C600EAB3E2 /* APLAppDelegate.m */; };
+		28A03C12171109C600EAB3E2 /* APLBrandsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A03C11171109C600EAB3E2 /* APLBrandsViewController.m */; };
+		A6DB6D8D76127793A3D6ABCA /* libPods-SimpleTableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 354143618BECC11D446B847A /* libPods-SimpleTableView.a */; };
+		BE1CB9071CE6D7C300F036BD /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */; };
+		BE1D6B181CE9C3E200FE6AD7 /* APLProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */; };
+		BE1D6B1B1CE9C58B00FE6AD7 /* APLBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */; };
+		BE1D6B2A1CE9E0CA00FE6AD7 /* APLBrandsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B291CE9E0CA00FE6AD7 /* APLBrandsModel.m */; };
+		BE54A7B31CE3468700E8822B /* SimpleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE54A7B21CE3468700E8822B /* SimpleTableView.xib */; };
+		BECB60991CF719370096804D /* APLAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BECB60981CF719370096804D /* APLAPIManager.m */; };
+		BEEDD2C41CFC4A18005FB32E /* ProductReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */; };
+		BEEFC8351CE5B7B80005136F /* APLCustomSimpleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEFC8341CE5B7B80005136F /* APLCustomSimpleViewCell.m */; };
+		BEFB15741CF81E5700D07965 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEFB15731CF81E5700D07965 /* Default-568h@2x.png */; };
+		BEFB15771CF8263700D07965 /* parseAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEFB15761CF8263700D07965 /* parseAPI.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		286F762B177DDE930001B043 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		28A03BF2171109C600EAB3E2 /* SimpleTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28A03BFD171109C600EAB3E2 /* SimpleTableView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTableView-Info.plist"; sourceTree = "<group>"; };
+		28A03BFF171109C600EAB3E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		28A03C01171109C600EAB3E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		28A03C04171109C600EAB3E2 /* APLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APLAppDelegate.h; sourceTree = "<group>"; };
+		28A03C05171109C600EAB3E2 /* APLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APLAppDelegate.m; sourceTree = "<group>"; };
+		28A03C10171109C600EAB3E2 /* APLBrandsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APLBrandsViewController.h; sourceTree = "<group>"; };
+		28A03C11171109C600EAB3E2 /* APLBrandsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APLBrandsViewController.m; sourceTree = "<group>"; };
+		354143618BECC11D446B847A /* libPods-SimpleTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleTableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B94BD024095D99939DBE497 /* Pods-SimpleTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTableView/Pods-SimpleTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		8BCE27D1A7724A499C0B76D2 /* Pods-SimpleTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTableView/Pods-SimpleTableView.release.xcconfig"; sourceTree = "<group>"; };
+		BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		BE1D6B161CE9C3E200FE6AD7 /* APLProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLProductsViewController.h; sourceTree = "<group>"; };
+		BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLProductsViewController.m; sourceTree = "<group>"; };
+		BE1D6B191CE9C58B00FE6AD7 /* APLBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLBrand.h; sourceTree = "<group>"; };
+		BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLBrand.m; sourceTree = "<group>"; };
+		BE1D6B281CE9E0CA00FE6AD7 /* APLBrandsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLBrandsModel.h; sourceTree = "<group>"; };
+		BE1D6B291CE9E0CA00FE6AD7 /* APLBrandsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLBrandsModel.m; sourceTree = "<group>"; };
+		BE54A7B21CE3468700E8822B /* SimpleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableView.xib; sourceTree = "<group>"; };
+		BECB60971CF719370096804D /* APLAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLAPIManager.h; sourceTree = "<group>"; };
+		BECB60981CF719370096804D /* APLAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLAPIManager.m; sourceTree = "<group>"; };
+		BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductReviewView.xib; sourceTree = "<group>"; };
+		BEEFC8321CE5ADA30005136F /* APLCustomSimpleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLCustomSimpleViewCell.h; sourceTree = "<group>"; };
+		BEEFC8341CE5B7B80005136F /* APLCustomSimpleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLCustomSimpleViewCell.m; sourceTree = "<group>"; };
+		BEFB15731CF81E5700D07965 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BEFB15761CF8263700D07965 /* parseAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parseAPI.plist; sourceTree = "<group>"; };
+		D8F0C2AD1C65562400E2517C /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = ReadMe.md; path = ../ReadMe.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28A03BEF171109C600EAB3E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6DB6D8D76127793A3D6ABCA /* libPods-SimpleTableView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28A03BE9171109C600EAB3E2 = {
+			isa = PBXGroup;
+			children = (
+				BEFB15731CF81E5700D07965 /* Default-568h@2x.png */,
+				D8F0C2AD1C65562400E2517C /* ReadMe.md */,
+				28A03BFB171109C600EAB3E2 /* SimpleTableView */,
+				28A03BF3171109C600EAB3E2 /* Products */,
+				E766363AEC4ED9BBD100A96C /* Pods */,
+				FD87B4003628F765C4C980C9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		28A03BF3171109C600EAB3E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28A03BF2171109C600EAB3E2 /* SimpleTableView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28A03BFB171109C600EAB3E2 /* SimpleTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BEEDD2C51CFC4A93005FB32E /* Controller */,
+				28A03C04171109C600EAB3E2 /* APLAppDelegate.h */,
+				28A03C05171109C600EAB3E2 /* APLAppDelegate.m */,
+				28A03BFC171109C600EAB3E2 /* Supporting Files */,
+				BE54A7B21CE3468700E8822B /* SimpleTableView.xib */,
+				BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */,
+				BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */,
+				BECB60961CF710C40096804D /* Model */,
+			);
+			path = SimpleTableView;
+			sourceTree = "<group>";
+		};
+		28A03BFC171109C600EAB3E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				286F762B177DDE930001B043 /* Images.xcassets */,
+				28A03BFD171109C600EAB3E2 /* SimpleTableView-Info.plist */,
+				28A03BFE171109C600EAB3E2 /* InfoPlist.strings */,
+				28A03C01171109C600EAB3E2 /* main.m */,
+				BEFB15761CF8263700D07965 /* parseAPI.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BECB60961CF710C40096804D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D6B191CE9C58B00FE6AD7 /* APLBrand.h */,
+				BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */,
+				BE1D6B281CE9E0CA00FE6AD7 /* APLBrandsModel.h */,
+				BE1D6B291CE9E0CA00FE6AD7 /* APLBrandsModel.m */,
+				BECB60971CF719370096804D /* APLAPIManager.h */,
+				BECB60981CF719370096804D /* APLAPIManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BEEDD2C51CFC4A93005FB32E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28A03C10171109C600EAB3E2 /* APLBrandsViewController.h */,
+				28A03C11171109C600EAB3E2 /* APLBrandsViewController.m */,
+				BEEFC8321CE5ADA30005136F /* APLCustomSimpleViewCell.h */,
+				BEEFC8341CE5B7B80005136F /* APLCustomSimpleViewCell.m */,
+				BE1D6B161CE9C3E200FE6AD7 /* APLProductsViewController.h */,
+				BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E766363AEC4ED9BBD100A96C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B94BD024095D99939DBE497 /* Pods-SimpleTableView.debug.xcconfig */,
+				8BCE27D1A7724A499C0B76D2 /* Pods-SimpleTableView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FD87B4003628F765C4C980C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				354143618BECC11D446B847A /* libPods-SimpleTableView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28A03BF1171109C600EAB3E2 /* SimpleTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28A03C15171109C600EAB3E2 /* Build configuration list for PBXNativeTarget "SimpleTableView" */;
+			buildPhases = (
+				444451E39261002668C407CE /* 📦 Check Pods Manifest.lock */,
+				28A03BEE171109C600EAB3E2 /* Sources */,
+				28A03BEF171109C600EAB3E2 /* Frameworks */,
+				28A03BF0171109C600EAB3E2 /* Resources */,
+				286F6E27DCE15908B8C3F6B6 /* 📦 Embed Pods Frameworks */,
+				289E5AC4C44E587447F3B2DA /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleTableView;
+			productName = SimpleTableView;
+			productReference = 28A03BF2171109C600EAB3E2 /* SimpleTableView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28A03BEA171109C600EAB3E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = APL;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Apple Inc.";
+			};
+			buildConfigurationList = 28A03BED171109C600EAB3E2 /* Build configuration list for PBXProject "SimpleTableView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28A03BE9171109C600EAB3E2;
+			productRefGroup = 28A03BF3171109C600EAB3E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28A03BF1171109C600EAB3E2 /* SimpleTableView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28A03BF0171109C600EAB3E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28A03C00171109C600EAB3E2 /* InfoPlist.strings in Resources */,
+				286F762C177DDE930001B043 /* Images.xcassets in Resources */,
+				BEEDD2C41CFC4A18005FB32E /* ProductReviewView.xib in Resources */,
+				BEFB15741CF81E5700D07965 /* Default-568h@2x.png in Resources */,
+				BE1CB9071CE6D7C300F036BD /* CustomTableViewCell.xib in Resources */,
+				BE54A7B31CE3468700E8822B /* SimpleTableView.xib in Resources */,
+				BEFB15771CF8263700D07965 /* parseAPI.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		286F6E27DCE15908B8C3F6B6 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleTableView/Pods-SimpleTableView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		289E5AC4C44E587447F3B2DA /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleTableView/Pods-SimpleTableView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		444451E39261002668C407CE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28A03BEE171109C600EAB3E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1D6B181CE9C3E200FE6AD7 /* APLProductsViewController.m in Sources */,
+				BE1D6B1B1CE9C58B00FE6AD7 /* APLBrand.m in Sources */,
+				BE1D6B2A1CE9E0CA00FE6AD7 /* APLBrandsModel.m in Sources */,
+				28A03C02171109C600EAB3E2 /* main.m in Sources */,
+				BECB60991CF719370096804D /* APLAPIManager.m in Sources */,
+				28A03C06171109C600EAB3E2 /* APLAppDelegate.m in Sources */,
+				BEEFC8351CE5B7B80005136F /* APLCustomSimpleViewCell.m in Sources */,
+				28A03C12171109C600EAB3E2 /* APLBrandsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		28A03BFE171109C600EAB3E2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28A03BFF171109C600EAB3E2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28A03C13171109C600EAB3E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		28A03C14171109C600EAB3E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28A03C16171109C600EAB3E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B94BD024095D99939DBE497 /* Pods-SimpleTableView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				INFOPLIST_FILE = "SimpleTableView/SimpleTableView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTableView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		28A03C17171109C600EAB3E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BCE27D1A7724A499C0B76D2 /* Pods-SimpleTableView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				INFOPLIST_FILE = "SimpleTableView/SimpleTableView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTableView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28A03BED171109C600EAB3E2 /* Build configuration list for PBXProject "SimpleTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28A03C13171109C600EAB3E2 /* Debug */,
+				28A03C14171109C600EAB3E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28A03C15171109C600EAB3E2 /* Build configuration list for PBXNativeTarget "SimpleTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28A03C16171109C600EAB3E2 /* Debug */,
+				28A03C17171109C600EAB3E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28A03BEA171109C600EAB3E2 /* Project object */;
+}
