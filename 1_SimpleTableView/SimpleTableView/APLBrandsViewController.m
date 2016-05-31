@@ -11,7 +11,6 @@
 #import "APLProductsViewController.h"
 #import "APLCustomSimpleViewCell.h"
 #import "APLBrand.h"
-#import "APLBrandsModel.h" //Will be deleted later
 
 #import "APLAPIManager.h"
 

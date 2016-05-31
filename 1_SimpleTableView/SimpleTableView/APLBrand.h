@@ -37,6 +37,14 @@ typedef NS_ENUM(NSInteger, ProductAvailabilityStatus) {
 @property NSString  *brandName;
 @property NSString  *brandDescription;
 
-@property NSArray<APLProduct*>   *products;
+@end
+
+
+@interface APLProductReview : NSObject
+
+@property NSInteger             rating;
+@property (nonatomic) NSString* comment;
+@property (nonatomic) NSString* productObjectId;
+@property (nonatomic )NSString* userObjectId;
 
 @end

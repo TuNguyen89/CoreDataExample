@@ -10,6 +10,7 @@
 #import "APLCustomSimpleViewCell.h"
 #import "APLAPIManager.h"
 
+#import "APLProductReviewViewController.h"
 
 @implementation APLProductsViewController
 
@@ -93,6 +94,13 @@
 
 - (void)handleProductDetail:(NSString *) aBrandId {
     brandId = aBrandId;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    APLProductReviewViewController* productReviewVC = [[APLProductReviewViewController alloc] initWithNibName:@"ProductReviewView" bundle:nil];
+    [productReviewVC handleProductReview: [productsList objectAtIndex:indexPath.row].productId];
+    [self.navigationController pushViewController:productReviewVC animated:TRUE];
 }
 
 #pragma mark - convert JSON to Product list

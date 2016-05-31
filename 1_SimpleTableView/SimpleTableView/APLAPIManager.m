@@ -98,6 +98,17 @@ static AFHTTPSessionManager* manager;
     }];
     
 }
+
+- (void) getProductReviewsByProductId: (NSString*) productObjectId completeBlock:(requestComppletionBlock)completion {
+    NSURL* productReviewsURLRequest = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", [parseProperties objectForKey:@"Parse-Base-URL"], [parseProperties objectForKey:@"Review-Relative-URL"]]];
+    
+    [manager GET:productReviewsURLRequest.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask* task, id responseObject) {
+        completion(TRUE, responseObject, nil);
+    } failure: ^(NSURLSessionDataTask* task , NSError* error) {
+        completion(FALSE, nil, error);
+    }];
+}
+
 - (void) getProductListByBrandId: (requestComppletionBlock) completion {
     
     completion(TRUE, nil, nil);
