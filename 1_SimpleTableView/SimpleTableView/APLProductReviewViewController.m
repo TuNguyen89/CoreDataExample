@@ -24,30 +24,14 @@
     __weak IBOutlet UITableView* tableViewReference;
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     productReviewList = [NSMutableArray new];
     
-    //Get the list of product review
-    APLAPIManager* manager =  [APLAPIManager sharedManager];
-    
-    //Create a query parameter with return number of predifined number of review
-    NSDictionary* queryString = @{@"where": @{@"productID": @{@"__type": @"Pointer", @"className": @"Product", @"objectId": productObjectId}},
-                                  @"limit":@MAX_NUMBER_OF_REVIEW_PER_REQUEST};
-    
-    [manager getProductReviewsByQueryString:queryString completeBlock:^(BOOL isSuccess, id respondeObject, NSError* error) {
-        
-        if (isSuccess == TRUE) {
-            
-            [self convertJSONToReviewList: respondeObject];
-            [tableViewReference reloadData];
-        } else {
-        
-            NSLog(@"%@", respondeObject);
-        }
-        
-    }];
+    [self fetchingProductReviewByNumberOfReivew: MAX_NUMBER_OF_REVIEW_PER_REQUEST];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,15 +51,43 @@
     
     UITableViewCell* viewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SystemTableViewId"];
     
-    
     viewCell.textLabel.text = review.comment;
     viewCell.detailTextLabel.text = review.userObjectId;
+    
+    if( indexPath.row == (productReviewList.count - 1)) {
+        [self fetchingProductReviewByNumberOfReivew:MAX_NUMBER_OF_REVIEW_PER_REQUEST];
+    }
     
     return viewCell;
 }
 
 - (void)handleProductReview:(NSString *) objectId {
     productObjectId = objectId;
+}
+
+- (void)fetchingProductReviewByNumberOfReivew: (NSInteger) numberOfReview {
+    //Get the list of product review
+    APLAPIManager* manager =  [APLAPIManager sharedManager];
+    
+    //Create a query parameter with return number of predifined number of review
+    NSDictionary* queryString = @{@"where": @{@"productID": @{@"__type": @"Pointer", @"className": @"Product", @"objectId": productObjectId}},
+                                  @"where":@{@"userID": @{@"$exist": @true}}, //The user id should exist to make a comment valid
+                                  @"where":@{@"comment": @{@"$exist": @true}}, // The comment also need be valid
+                                  @"limit": [NSNumber numberWithInteger:numberOfReview],
+                                  @"skip": [NSNumber numberWithInteger:productReviewList.count]};
+    
+    [manager getProductReviewsByQueryString:queryString completeBlock:^(BOOL isSuccess, id respondeObject, NSError* error) {
+        
+        if (isSuccess == TRUE) {
+            
+            [self convertJSONToReviewList: respondeObject];
+            [tableViewReference reloadData];
+        } else {
+            
+            NSLog(@"%@", respondeObject);
+        }
+        
+    }];
 }
 
 - (void) convertJSONToReviewList: (id) respondedObject {

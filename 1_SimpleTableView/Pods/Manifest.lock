@@ -14,13 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - HCSStarRatingView (1.4.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - HCSStarRatingView (~> 1.4.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
 
-PODFILE CHECKSUM: a562d873bfdceccdab16fea884ad6a1f7906d861
+PODFILE CHECKSUM: 3a4dce86dc571872b0f4a1dd8df129e9bcdf9aa0
 
 COCOAPODS: 1.0.0

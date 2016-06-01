@@ -16,7 +16,6 @@
 		28A03C02171109C600EAB3E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A03C01171109C600EAB3E2 /* main.m */; };
 		28A03C06171109C600EAB3E2 /* APLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A03C05171109C600EAB3E2 /* APLAppDelegate.m */; };
 		28A03C12171109C600EAB3E2 /* APLBrandsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A03C11171109C600EAB3E2 /* APLBrandsViewController.m */; };
-		A6DB6D8D76127793A3D6ABCA /* libPods-SimpleTableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 354143618BECC11D446B847A /* libPods-SimpleTableView.a */; };
 		BE1CB9071CE6D7C300F036BD /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */; };
 		BE1D6B181CE9C3E200FE6AD7 /* APLProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */; };
 		BE1D6B1B1CE9C58B00FE6AD7 /* APLBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */; };
@@ -26,6 +25,7 @@
 		BEEFC8351CE5B7B80005136F /* APLCustomSimpleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEFC8341CE5B7B80005136F /* APLCustomSimpleViewCell.m */; };
 		BEFB15741CF81E5700D07965 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEFB15731CF81E5700D07965 /* Default-568h@2x.png */; };
 		BEFB15771CF8263700D07965 /* parseAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEFB15761CF8263700D07965 /* parseAPI.plist */; };
+		D4F0B402B3F490FB74C7E9E4 /* Pods_SimpleTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E5E7406E0AF27AC6FBF4045 /* Pods_SimpleTableView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +34,7 @@
 		0855FB6A1CFD84F3001BC502 /* coming_soon_70_70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_70_70.png; sourceTree = "<group>"; };
 		0855FB6C1CFD8571001BC502 /* coming_soon_100_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_100_100.png; sourceTree = "<group>"; };
 		0855FB6F1CFEE65B001BC502 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		1E5E7406E0AF27AC6FBF4045 /* Pods_SimpleTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		286F762B177DDE930001B043 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28A03BF2171109C600EAB3E2 /* SimpleTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A03BFD171109C600EAB3E2 /* SimpleTableView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTableView-Info.plist"; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		28A03C05171109C600EAB3E2 /* APLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APLAppDelegate.m; sourceTree = "<group>"; };
 		28A03C10171109C600EAB3E2 /* APLBrandsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APLBrandsViewController.h; sourceTree = "<group>"; };
 		28A03C11171109C600EAB3E2 /* APLBrandsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APLBrandsViewController.m; sourceTree = "<group>"; };
-		354143618BECC11D446B847A /* libPods-SimpleTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleTableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B94BD024095D99939DBE497 /* Pods-SimpleTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTableView/Pods-SimpleTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		8BCE27D1A7724A499C0B76D2 /* Pods-SimpleTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTableView/Pods-SimpleTableView.release.xcconfig"; sourceTree = "<group>"; };
 		BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6DB6D8D76127793A3D6ABCA /* libPods-SimpleTableView.a in Frameworks */,
+				D4F0B402B3F490FB74C7E9E4 /* Pods_SimpleTableView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,7 @@
 		FD87B4003628F765C4C980C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				354143618BECC11D446B847A /* libPods-SimpleTableView.a */,
+				1E5E7406E0AF27AC6FBF4045 /* Pods_SimpleTableView.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
