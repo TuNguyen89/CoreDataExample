@@ -45,6 +45,6 @@ typedef NS_ENUM(NSInteger, ProductAvailabilityStatus) {
 @property NSInteger             rating;
 @property (nonatomic) NSString* comment;
 @property (nonatomic) NSString* productObjectId;
-@property (nonatomic )NSString* userObjectId;
+@property (nonatomic )id        userObjectId;
 
 @end

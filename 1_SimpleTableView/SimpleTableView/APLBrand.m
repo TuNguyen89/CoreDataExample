@@ -29,3 +29,8 @@
 }
 
 @end
+
+@implementation APLProductReview
+
+
+@end

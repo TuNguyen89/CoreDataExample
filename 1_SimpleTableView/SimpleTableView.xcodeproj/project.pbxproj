@@ -10,6 +10,7 @@
 		0855FB691CFD7E1C001BC502 /* APLProductReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0855FB681CFD7E1B001BC502 /* APLProductReviewViewController.m */; };
 		0855FB6B1CFD84F3001BC502 /* coming_soon_70_70.png in Resources */ = {isa = PBXBuildFile; fileRef = 0855FB6A1CFD84F3001BC502 /* coming_soon_70_70.png */; };
 		0855FB6D1CFD8571001BC502 /* coming_soon_100_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 0855FB6C1CFD8571001BC502 /* coming_soon_100_100.png */; };
+		0855FB701CFEE65B001BC502 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0855FB6F1CFEE65B001BC502 /* ReviewTableViewCell.xib */; };
 		286F762C177DDE930001B043 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286F762B177DDE930001B043 /* Images.xcassets */; };
 		28A03C00171109C600EAB3E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28A03BFE171109C600EAB3E2 /* InfoPlist.strings */; };
 		28A03C02171109C600EAB3E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A03C01171109C600EAB3E2 /* main.m */; };
@@ -32,6 +33,7 @@
 		0855FB681CFD7E1B001BC502 /* APLProductReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLProductReviewViewController.m; sourceTree = "<group>"; };
 		0855FB6A1CFD84F3001BC502 /* coming_soon_70_70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_70_70.png; sourceTree = "<group>"; };
 		0855FB6C1CFD8571001BC502 /* coming_soon_100_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_100_100.png; sourceTree = "<group>"; };
+		0855FB6F1CFEE65B001BC502 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		286F762B177DDE930001B043 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28A03BF2171109C600EAB3E2 /* SimpleTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A03BFD171109C600EAB3E2 /* SimpleTableView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTableView-Info.plist"; sourceTree = "<group>"; };
@@ -72,6 +74,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0855FB6E1CFEE576001BC502 /* XibFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BE54A7B21CE3468700E8822B /* SimpleTableView.xib */,
+				BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */,
+				BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */,
+				0855FB6F1CFEE65B001BC502 /* ReviewTableViewCell.xib */,
+			);
+			name = XibFiles;
+			sourceTree = "<group>";
+		};
 		28A03BE9171109C600EAB3E2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +112,7 @@
 				28A03C04171109C600EAB3E2 /* APLAppDelegate.h */,
 				28A03C05171109C600EAB3E2 /* APLAppDelegate.m */,
 				28A03BFC171109C600EAB3E2 /* Supporting Files */,
-				BE54A7B21CE3468700E8822B /* SimpleTableView.xib */,
-				BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */,
-				BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */,
+				0855FB6E1CFEE576001BC502 /* XibFiles */,
 				BECB60961CF710C40096804D /* Model */,
 			);
 			path = SimpleTableView;
@@ -221,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28A03C00171109C600EAB3E2 /* InfoPlist.strings in Resources */,
+				0855FB701CFEE65B001BC502 /* ReviewTableViewCell.xib in Resources */,
 				286F762C177DDE930001B043 /* Images.xcassets in Resources */,
 				BEEDD2C41CFC4A18005FB32E /* ProductReviewView.xib in Resources */,
 				BEFB15741CF81E5700D07965 /* Default-568h@2x.png in Resources */,
