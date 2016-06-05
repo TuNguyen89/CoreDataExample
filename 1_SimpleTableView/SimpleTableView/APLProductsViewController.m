@@ -7,7 +7,7 @@
 //
 
 #import "APLProductsViewController.h"
-#import "APLCustomSimpleViewCell.h"
+#import "APLCustomViewCells.h"
 #import "APLAPIManager.h"
 
 #import "APLProductReviewViewController.h"
@@ -24,6 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    tableViewOnController.rowHeight = UITableViewAutomaticDimension;
+    tableViewOnController.estimatedRowHeight = 100.0;
     
     //Initilaze an indicator using for loading data.
     productLoadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame: CGRectMake(0, 0, 40, 40)];
@@ -63,24 +66,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    APLCustomTableViewCell *customCell = [tableView dequeueReusableCellWithIdentifier:@"CustomViewCellId"];
+    APLProductTableViewCell *customCell = [tableView dequeueReusableCellWithIdentifier:@"CustomViewCellId"];
     APLProduct* productAtIndexPath = [productsList objectAtIndex: indexPath.row];
     
     if (!customCell) {
         
         NSArray* objFromNib = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell" owner:self options:nil];
         
-        if ( [[objFromNib objectAtIndex:0] class] == ([APLCustomTableViewCell class])) {
+        if ( [[objFromNib objectAtIndex:0] class] == ([APLProductTableViewCell class])) {
             customCell = [objFromNib objectAtIndex:0];
         } else {
             //Create the default custom cell
-            customCell = [[APLCustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            customCell = [[APLProductTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         }
     }
     
     //if the brand have receive from another view controller e.g. produc view controller
     if (productAtIndexPath) {
-        customCell.productImage.image = [UIImage imageNamed:productAtIndexPath.imageName];
         customCell.productName.text = productAtIndexPath.productName;
         customCell.priceValue.text = [NSString stringWithFormat:@"%.2f $", productAtIndexPath.productPrice];
         customCell.productStatusBnt.availabilityStatus = productAtIndexPath.productStatus;
@@ -99,7 +101,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     APLProductReviewViewController* productReviewVC = [[APLProductReviewViewController alloc] initWithNibName:@"ProductReviewView" bundle:nil];
-    [productReviewVC handleProductReview: [productsList objectAtIndex:indexPath.row].productId];
+    [productReviewVC handleProductReview: [productsList objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:productReviewVC animated:TRUE];
 }
 

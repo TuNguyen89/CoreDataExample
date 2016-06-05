@@ -19,10 +19,11 @@
 		BE1CB9071CE6D7C300F036BD /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */; };
 		BE1D6B181CE9C3E200FE6AD7 /* APLProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */; };
 		BE1D6B1B1CE9C58B00FE6AD7 /* APLBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */; };
+		BE3227C11D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE3227C01D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib */; };
 		BE54A7B31CE3468700E8822B /* SimpleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE54A7B21CE3468700E8822B /* SimpleTableView.xib */; };
 		BECB60991CF719370096804D /* APLAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BECB60981CF719370096804D /* APLAPIManager.m */; };
 		BEEDD2C41CFC4A18005FB32E /* ProductReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */; };
-		BEEFC8351CE5B7B80005136F /* APLCustomSimpleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEFC8341CE5B7B80005136F /* APLCustomSimpleViewCell.m */; };
+		BEEFC8351CE5B7B80005136F /* APLCustomViewCells.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEFC8341CE5B7B80005136F /* APLCustomViewCells.m */; };
 		BEFB15741CF81E5700D07965 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEFB15731CF81E5700D07965 /* Default-568h@2x.png */; };
 		BEFB15771CF8263700D07965 /* parseAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEFB15761CF8263700D07965 /* parseAPI.plist */; };
 		D4F0B402B3F490FB74C7E9E4 /* Pods_SimpleTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E5E7406E0AF27AC6FBF4045 /* Pods_SimpleTableView.framework */; };
@@ -51,12 +52,13 @@
 		BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLProductsViewController.m; sourceTree = "<group>"; };
 		BE1D6B191CE9C58B00FE6AD7 /* APLBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLBrand.h; sourceTree = "<group>"; };
 		BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLBrand.m; sourceTree = "<group>"; };
+		BE3227C01D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultCellWithAutoFitHeight.xib; sourceTree = "<group>"; };
 		BE54A7B21CE3468700E8822B /* SimpleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableView.xib; sourceTree = "<group>"; };
 		BECB60971CF719370096804D /* APLAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLAPIManager.h; sourceTree = "<group>"; };
 		BECB60981CF719370096804D /* APLAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLAPIManager.m; sourceTree = "<group>"; };
 		BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductReviewView.xib; sourceTree = "<group>"; };
-		BEEFC8321CE5ADA30005136F /* APLCustomSimpleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLCustomSimpleViewCell.h; sourceTree = "<group>"; };
-		BEEFC8341CE5B7B80005136F /* APLCustomSimpleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLCustomSimpleViewCell.m; sourceTree = "<group>"; };
+		BEEFC8321CE5ADA30005136F /* APLCustomViewCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLCustomViewCells.h; sourceTree = "<group>"; };
+		BEEFC8341CE5B7B80005136F /* APLCustomViewCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLCustomViewCells.m; sourceTree = "<group>"; };
 		BEFB15731CF81E5700D07965 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BEFB15761CF8263700D07965 /* parseAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parseAPI.plist; sourceTree = "<group>"; };
 		D8F0C2AD1C65562400E2517C /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = ReadMe.md; path = ../ReadMe.md; sourceTree = "<group>"; };
@@ -77,10 +79,13 @@
 		0855FB6E1CFEE576001BC502 /* XibFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BEEFC8321CE5ADA30005136F /* APLCustomViewCells.h */,
+				BEEFC8341CE5B7B80005136F /* APLCustomViewCells.m */,
 				BE54A7B21CE3468700E8822B /* SimpleTableView.xib */,
 				BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */,
 				BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */,
 				0855FB6F1CFEE65B001BC502 /* ReviewTableViewCell.xib */,
+				BE3227C01D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib */,
 			);
 			name = XibFiles;
 			sourceTree = "<group>";
@@ -148,8 +153,6 @@
 			children = (
 				28A03C10171109C600EAB3E2 /* APLBrandsViewController.h */,
 				28A03C11171109C600EAB3E2 /* APLBrandsViewController.m */,
-				BEEFC8321CE5ADA30005136F /* APLCustomSimpleViewCell.h */,
-				BEEFC8341CE5B7B80005136F /* APLCustomSimpleViewCell.m */,
 				BE1D6B161CE9C3E200FE6AD7 /* APLProductsViewController.h */,
 				BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */,
 				0855FB671CFD7E1B001BC502 /* APLProductReviewViewController.h */,
@@ -239,6 +242,7 @@
 				BE1CB9071CE6D7C300F036BD /* CustomTableViewCell.xib in Resources */,
 				BE54A7B31CE3468700E8822B /* SimpleTableView.xib in Resources */,
 				0855FB6D1CFD8571001BC502 /* coming_soon_100_100.png in Resources */,
+				BE3227C11D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib in Resources */,
 				BEFB15771CF8263700D07965 /* parseAPI.plist in Resources */,
 				0855FB6B1CFD84F3001BC502 /* coming_soon_70_70.png in Resources */,
 			);
@@ -305,7 +309,7 @@
 				0855FB691CFD7E1C001BC502 /* APLProductReviewViewController.m in Sources */,
 				BECB60991CF719370096804D /* APLAPIManager.m in Sources */,
 				28A03C06171109C600EAB3E2 /* APLAppDelegate.m in Sources */,
-				BEEFC8351CE5B7B80005136F /* APLCustomSimpleViewCell.m in Sources */,
+				BEEFC8351CE5B7B80005136F /* APLCustomViewCells.m in Sources */,
 				28A03C12171109C600EAB3E2 /* APLBrandsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

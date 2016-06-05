@@ -3,6 +3,7 @@ curl -X GET \
   -H "X-Parse-Rest-Api-Key: ${FINAL_EXAM_REST_API_KEY}" \
   -G \
   --data-urlencode 'order=-rating' \
-  --data-urlencode 'limit=10'  \
+  --data-urlencode 'limit=1'  \
   --data-urlencode 'where={"productID": {"__type": "Pointer", "className": "Product", "objectId": "KVuLPoaMjG"}}' \
+  --data-urlencode 'include=user'  \
   https://api.parse.com/1/classes/Review

@@ -9,8 +9,17 @@
 #import "APLProductReviewViewController.h"
 #import "APLBrand.h"
 #import "APLAPIManager.h"
+#import "APLCustomViewCells.h"
 
 #define MAX_NUMBER_OF_REVIEW_PER_REQUEST        10
+
+typedef NS_ENUM(NSInteger, ProductSectionType) {
+    ProductSectionTypeAboutThisItem,
+    ProductSectionTypeCustomerReviews,
+    ProductSectionTypeMax
+    
+};
+
 
 @interface APLProductReviewViewController ()
 
@@ -19,7 +28,7 @@
 @implementation APLProductReviewViewController
 
 {
-    NSString* productObjectId;
+    id productObjectId;
     NSMutableArray<APLProductReview*> *productReviewList;
     __weak IBOutlet UITableView* tableViewReference;
 }
@@ -29,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self configureTableView];
     productReviewList = [NSMutableArray new];
     
     [self fetchingProductReviewByNumberOfReivew: MAX_NUMBER_OF_REVIEW_PER_REQUEST];
@@ -41,27 +51,110 @@
 
 #pragma mark - Data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return ProductSectionTypeMax;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return productReviewList.count;
+    
+    NSInteger numberOfRow = 0;
+    switch (section) {
+        case ProductSectionTypeAboutThisItem:
+            numberOfRow = 1;
+            break;
+        case ProductSectionTypeCustomerReviews:
+            numberOfRow =  productReviewList.count;
+            break;
+        default:
+            break;
+    }
+    
+    return numberOfRow;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    APLProductReview* review = [productReviewList objectAtIndex:indexPath.row];
+    UITableViewCell* resultCell = nil;
     
-    UITableViewCell* viewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SystemTableViewId"];
-    
-    viewCell.textLabel.text = review.comment;
-    viewCell.detailTextLabel.text = review.userObjectId;
-    
-    if( indexPath.row == (productReviewList.count - 1)) {
-        [self fetchingProductReviewByNumberOfReivew:MAX_NUMBER_OF_REVIEW_PER_REQUEST];
+    switch (indexPath.section) {
+        case ProductSectionTypeCustomerReviews:
+            resultCell = [self buildTableViewCellForProductReview:tableView];
+            break;
+        case ProductSectionTypeAboutThisItem:
+            resultCell = [self buildTableViewCellForAboutThisItem];
+            break;
+        default:
+            resultCell = [UITableViewCell new];
+            break;
     }
-    
-    return viewCell;
+
+    return resultCell;
 }
 
-- (void)handleProductReview:(NSString *) objectId {
+- (UITableViewCell* ) buildTableViewCellForProductReview: (UITableView*) tableView {
+    static NSString* reusedCellId = @"ReviewTbCellId";
+    APLProducReviewTableViewCell* reviewTableViewCell = [tableView dequeueReusableCellWithIdentifier:reusedCellId];
+    
+    if (reviewTableViewCell) {
+        return reviewTableViewCell;
+    } else {
+        return [[APLProducReviewTableViewCell alloc] initWithNibName:@"ReviewTableViewCell"];
+    }
+
+}
+
+- (UITableViewCell*) buildTableViewCellForAboutThisItem {
+    APLDefaultCellWithAutoFitHeight* resultCell = [[APLDefaultCellWithAutoFitHeight alloc] initWithNibName:@"DefaultCellWithAutoFitHeight"];
+    
+    resultCell.autoFitTextLabel.text = @"Description";
+    resultCell.autoFitDetailTextLabel.text = [productObjectId valueForKey:@"productDescription"];
+
+    return resultCell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if ([cell isKindOfClass: [APLProducReviewTableViewCell class]])
+    {
+        APLProducReviewTableViewCell* reviewTableViewCell = (APLProducReviewTableViewCell*) cell;
+        if (indexPath.section == ProductSectionTypeCustomerReviews && productReviewList.count) {
+            APLProductReview* review = [productReviewList objectAtIndex:indexPath.row];
+
+            if (!reviewTableViewCell)
+            {
+                //Create the new table view cell if it doesn't existing in table
+                reviewTableViewCell = [[APLProducReviewTableViewCell alloc] initWithNibName:@"ReviewTableViewCell"];
+
+            }
+
+            reviewTableViewCell.userComment.text = review.comment;
+            reviewTableViewCell.userName.text    = [review.userObjectId objectForKey:@"objectId"];
+            reviewTableViewCell.ratingBar.value  = (review.rating % 10) / 2.00;
+
+            if( indexPath.row == (productReviewList.count - 1)) {
+                [self fetchingProductReviewByNumberOfReivew:MAX_NUMBER_OF_REVIEW_PER_REQUEST];
+            }
+
+        }
+    }
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case ProductSectionTypeAboutThisItem:
+            return @"About this item";
+        case ProductSectionTypeCustomerReviews:
+            return @"Customer Reviews";
+        default:
+            return @"Default section";
+            break;
+    }
+    
+    return @"should not reach here!!!";
+}
+
+- (void)handleProductReview:(id) objectId {
     productObjectId = objectId;
 }
 
@@ -70,9 +163,11 @@
     APLAPIManager* manager =  [APLAPIManager sharedManager];
     
     //Create a query parameter with return number of predifined number of review
-    NSDictionary* queryString = @{@"where": @{@"productID": @{@"__type": @"Pointer", @"className": @"Product", @"objectId": productObjectId}},
+    NSDictionary* queryString = @{@"where": @{@"productID": @{@"__type": @"Pointer", @"className": @"Product", @"objectId": [productObjectId valueForKey:@"productId"]}},
                                   @"where":@{@"userID": @{@"$exist": @true}}, //The user id should exist to make a comment valid
                                   @"where":@{@"comment": @{@"$exist": @true}}, // The comment also need be valid
+                                  @"where": @{@"rating": @{@"exist": @true}},
+                                  @"order": @"-createdAt",
                                   @"limit": [NSNumber numberWithInteger:numberOfReview],
                                   @"skip": [NSNumber numberWithInteger:productReviewList.count]};
     
@@ -107,6 +202,11 @@
     }];
 }
 
+
+- (void) configureTableView {
+    tableViewReference.rowHeight = UITableViewAutomaticDimension;
+    tableViewReference.estimatedRowHeight = 160;
+}
 
 #pragma mark - Delegate
 

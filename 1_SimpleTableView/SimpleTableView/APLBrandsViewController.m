@@ -9,7 +9,7 @@
 
 #import "APLBrandsViewController.h"
 #import "APLProductsViewController.h"
-#import "APLCustomSimpleViewCell.h"
+#import "APLCustomViewCells.h"
 #import "APLBrand.h"
 
 #import "APLAPIManager.h"
@@ -26,12 +26,14 @@
     //We need a weak reference of table view to reload the data
     __weak UITableView*        brandtableView;
     UIActivityIndicatorView*   brandLoadingIndicator;
+
 }
 
 #pragma mark - View Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     //Allocate a new mutable array
     brandsList = [NSMutableArray new];
@@ -46,6 +48,8 @@
     [self initTableView];
     brandtableView.hidden = TRUE;
     [self.view addSubview:brandLoadingIndicator];
+    brandtableView.rowHeight = UITableViewAutomaticDimension;
+    brandtableView.estimatedRowHeight = 160;
     
     //Loading brand list
     APLAPIManager* apiManager = [APLAPIManager sharedManager] ;
@@ -59,16 +63,17 @@
             [self convertJSONToBrandsList:responseObject];
             
             //After get data source finish, let reload the table view
-            [brandtableView reloadData];
             brandtableView.hidden = FALSE;
+            [brandtableView reloadData];
+            
             
         } else {
             NSLog(@"ERROR: %@", error);
         }
         
-        //Show the resutl of loading to user
-        UITextField* brandLoadingResultTxtFld = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
         if (error || brandsList.count == 0) {
+            //Show the resutl of loading to user
+            UITextField* brandLoadingResultTxtFld = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
             if (error) {
                 
                 brandLoadingResultTxtFld.text = @"Error during loading brands";
@@ -77,8 +82,6 @@
             }
             
             [self.view addSubview:brandLoadingResultTxtFld];
-        } else {
-            //[self initTableView];
         }
         
     }];
@@ -88,34 +91,31 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	// Return the number of time zone names.
     return [brandsList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	static NSString *MyIdentifier = @"defaultTableViewCellId";
+	static NSString *MyIdentifier = @"CellWithAutoFitHeightId";
 
 	/*
      Retrieve a cell with the given identifier from the table view.
      */
-    UITableViewCell *defaultCell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    APLDefaultCellWithAutoFitHeight *defaultCell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
     if (!defaultCell)
     {
-        
-        defaultCell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        defaultCell =  [[APLDefaultCellWithAutoFitHeight alloc] initWithNibName:@"DefaultCellWithAutoFitHeight"];
     }
     
     /*Get the Brand base on row index*/
     APLBrand* brand = [brandsList objectAtIndex:indexPath.row];
     
 	// Set up the text for cell.
-    defaultCell.textLabel.text = brand.brandName;
-    //Set the Brand image for cell
-    defaultCell.imageView.image = [UIImage imageNamed:brand.brandImage];
-    //Make rectangle as square shape with height is 20 the image view
-    defaultCell.imageView.frame = CGRectMake(0.0, 0.0, 70.0, 70.0);
+    defaultCell.autoFitTextLabel.text = brand.brandName;
+    defaultCell.autoFitTextLabel.font = [UIFont fontWithName:@"System" size:17.0];
+    defaultCell.autoFitDetailTextLabel.text = brand.brandDescription;
+    
 
 	return defaultCell;
 }
@@ -134,10 +134,7 @@
     [self.navigationController pushViewController:productDetailVC animated:YES];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0;
-}
-
+#pragma mark - Initialize table view
 
 - (void) initTableView {
     //Create a default table view and add it into the subview of view controller
@@ -146,9 +143,15 @@
     //Set the data source and delegate to this view controller
     tableView.dataSource = self;
     tableView.delegate   = self;
+    //Set self resizing for cell height
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    tableView.estimatedRowHeight = 160;
+    
     brandtableView = tableView;
     //Add to view
     [self.view addSubview:tableView];
+    
+    
 }
 
 #pragma mark - convert JSON to Brand list

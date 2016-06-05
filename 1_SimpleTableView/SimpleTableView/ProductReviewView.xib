@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="APLProductReviewViewController">
@@ -16,20 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7U-ks-bdE">
-                    <rect key="frame" x="129" y="131" width="191" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coming_soon_100_100.png" translatesAutoresizingMaskIntoConstraints="NO" id="lGe-Mt-hJq">
-                    <rect key="frame" x="0.0" y="60" width="100" height="100"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coming_soon_70_70.png" translatesAutoresizingMaskIntoConstraints="NO" id="lGe-Mt-hJq">
+                    <rect key="frame" x="0.0" y="80" width="70" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="YHN-78-64T"/>
-                        <constraint firstAttribute="width" constant="100" id="amX-FG-MTN"/>
+                        <constraint firstAttribute="height" constant="70" id="YHN-78-64T"/>
+                        <constraint firstAttribute="width" constant="70" id="amX-FG-MTN"/>
                     </constraints>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gv3-WJ-zBE">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="20" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gv3-WJ-zBE">
                     <rect key="frame" x="0.0" y="160" width="320" height="320"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -47,13 +41,13 @@
                 <constraint firstItem="lGe-Mt-hJq" firstAttribute="leading" secondItem="SiP-L7-NHq" secondAttribute="leading" id="BFl-bW-rQp"/>
                 <constraint firstItem="gv3-WJ-zBE" firstAttribute="leading" secondItem="SiP-L7-NHq" secondAttribute="leading" id="ET5-Mt-veq"/>
                 <constraint firstAttribute="trailing" secondItem="gv3-WJ-zBE" secondAttribute="trailing" id="Uye-5w-njh"/>
-                <constraint firstItem="gv3-WJ-zBE" firstAttribute="top" secondItem="lGe-Mt-hJq" secondAttribute="bottom" id="tKa-XT-la1"/>
+                <constraint firstItem="gv3-WJ-zBE" firstAttribute="top" secondItem="lGe-Mt-hJq" secondAttribute="bottom" constant="10" id="wv2-v7-M7u"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="511" y="363"/>
         </view>
     </objects>
     <resources>
-        <image name="coming_soon_100_100.png" width="100" height="100"/>
+        <image name="coming_soon_70_70.png" width="70" height="70"/>
     </resources>
 </document>

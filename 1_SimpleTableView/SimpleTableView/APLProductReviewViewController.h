@@ -10,6 +10,6 @@
 
 @interface APLProductReviewViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-- (void) handleProductReview: (NSString*) objectId;
+- (void) handleProductReview: (id) objectId;
 
 @end

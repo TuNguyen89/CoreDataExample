@@ -10,4 +10,5 @@
 @import UIKit;
 
 @interface APLBrandsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
 @end
