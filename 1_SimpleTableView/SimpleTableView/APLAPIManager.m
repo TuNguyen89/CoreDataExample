@@ -115,4 +115,17 @@ static AFHTTPSessionManager* manager;
     completion(TRUE, nil, nil);
 }
 
+- (void) getUserListAll:(requestComppletionBlock)completion {
+    
+    NSURL* userURLRequest = [NSURL URLWithString: [NSString stringWithFormat: @"%@/%@", [parseProperties objectForKey:@"Parse-Base-URL"], [parseProperties objectForKey:@"User-Relative-URL"]]];
+    
+    [manager GET:userURLRequest.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask* task, id responseObject) {
+        completion(TRUE, responseObject, nil);
+        
+    } failure: ^(NSURLSessionDataTask* task , NSError* error) {
+        completion(FALSE, nil, error);
+    }];
+    
+}
+
 @end

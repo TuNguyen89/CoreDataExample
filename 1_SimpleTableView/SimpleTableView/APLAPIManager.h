@@ -25,5 +25,6 @@ typedef void(^requestComppletionBlock)(BOOL, id, NSError*);
 - (void) getProductListALl:(requestComppletionBlock) completion;
 - (void) getProductListByBrandId:(requestComppletionBlock) completion;
 - (void) getProductReviewsByQueryString: (NSDictionary*) queryString completeBlock: (requestComppletionBlock) completion;
+- (void) getUserListAll: (requestComppletionBlock) completion;
 
 @end

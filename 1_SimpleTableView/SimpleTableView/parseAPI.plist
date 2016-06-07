@@ -10,6 +10,8 @@
 	<string>1/classes/Brand</string>
 	<key>Review-Relative-URL</key>
 	<string>1/classes/Review</string>
+	<key>User-Relative-URL</key>
+	<string>1/classes/User</string>
 	<key>X-Parse-Application-Id</key>
 	<string>MlR6vYpYvLRxfibxE5cg0e73jXojL6jWFqXU6F8L</string>
 	<key>X-Parse-Rest-Api-Key</key>
