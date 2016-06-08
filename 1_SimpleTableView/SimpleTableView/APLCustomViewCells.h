@@ -21,7 +21,7 @@
 @end
 
 
-@interface APLProducReviewTableViewCell : UITableViewCell
+@interface APLProductReviewTableViewCell : UITableViewCell
 
 - initWithNibName: (NSString*) nibNameOrNil;
 

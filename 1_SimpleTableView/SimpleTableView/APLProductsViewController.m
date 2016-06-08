@@ -21,9 +21,14 @@
     UIActivityIndicatorView* productLoadingIndicator;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"%@", self.view);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     
     tableViewOnController.rowHeight = UITableViewAutomaticDimension;
     tableViewOnController.estimatedRowHeight = 100.0;
@@ -51,6 +56,8 @@
     }];
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -100,9 +107,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
+    //TODO something wrong with product review controller
+    
     APLProductReviewViewController* productReviewVC = [[APLProductReviewViewController alloc] initWithNibName:@"ProductReviewView" bundle:nil];
     [productReviewVC handleProductReview: [productsList objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:productReviewVC animated:TRUE];
+
 }
 
 #pragma mark - convert JSON to Product list

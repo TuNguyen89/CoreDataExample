@@ -20,6 +20,8 @@
 		BE1D6B181CE9C3E200FE6AD7 /* APLProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */; };
 		BE1D6B1B1CE9C58B00FE6AD7 /* APLBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */; };
 		BE3227C11D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE3227C01D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib */; };
+		BE330F8D1D06CA7F00AD5194 /* APLAddingReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE330F8B1D06CA7F00AD5194 /* APLAddingReviewViewController.m */; };
+		BE330F8E1D06CA7F00AD5194 /* AddingReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE330F8C1D06CA7F00AD5194 /* AddingReviewViewController.xib */; };
 		BE54A7B31CE3468700E8822B /* SimpleTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE54A7B21CE3468700E8822B /* SimpleTableView.xib */; };
 		BECB60991CF719370096804D /* APLAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BECB60981CF719370096804D /* APLAPIManager.m */; };
 		BEEDD2C41CFC4A18005FB32E /* ProductReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */; };
@@ -53,6 +55,9 @@
 		BE1D6B191CE9C58B00FE6AD7 /* APLBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLBrand.h; sourceTree = "<group>"; };
 		BE1D6B1A1CE9C58B00FE6AD7 /* APLBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLBrand.m; sourceTree = "<group>"; };
 		BE3227C01D0140B200304A90 /* DefaultCellWithAutoFitHeight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultCellWithAutoFitHeight.xib; sourceTree = "<group>"; };
+		BE330F8A1D06CA7F00AD5194 /* APLAddingReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLAddingReviewViewController.h; sourceTree = "<group>"; };
+		BE330F8B1D06CA7F00AD5194 /* APLAddingReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLAddingReviewViewController.m; sourceTree = "<group>"; };
+		BE330F8C1D06CA7F00AD5194 /* AddingReviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddingReviewViewController.xib; sourceTree = "<group>"; };
 		BE54A7B21CE3468700E8822B /* SimpleTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableView.xib; sourceTree = "<group>"; };
 		BECB60971CF719370096804D /* APLAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLAPIManager.h; sourceTree = "<group>"; };
 		BECB60981CF719370096804D /* APLAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLAPIManager.m; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			children = (
 				BEEFC8321CE5ADA30005136F /* APLCustomViewCells.h */,
 				BEEFC8341CE5B7B80005136F /* APLCustomViewCells.m */,
+				BE330F8C1D06CA7F00AD5194 /* AddingReviewViewController.xib */,
 				BE54A7B21CE3468700E8822B /* SimpleTableView.xib */,
 				BE1CB9061CE6D7C300F036BD /* CustomTableViewCell.xib */,
 				BEEDD2C31CFC4A18005FB32E /* ProductReviewView.xib */,
@@ -157,6 +163,8 @@
 				BE1D6B171CE9C3E200FE6AD7 /* APLProductsViewController.m */,
 				0855FB671CFD7E1B001BC502 /* APLProductReviewViewController.h */,
 				0855FB681CFD7E1B001BC502 /* APLProductReviewViewController.m */,
+				BE330F8A1D06CA7F00AD5194 /* APLAddingReviewViewController.h */,
+				BE330F8B1D06CA7F00AD5194 /* APLAddingReviewViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				286F762C177DDE930001B043 /* Images.xcassets in Resources */,
 				BEEDD2C41CFC4A18005FB32E /* ProductReviewView.xib in Resources */,
 				BEFB15741CF81E5700D07965 /* Default-568h@2x.png in Resources */,
+				BE330F8E1D06CA7F00AD5194 /* AddingReviewViewController.xib in Resources */,
 				BE1CB9071CE6D7C300F036BD /* CustomTableViewCell.xib in Resources */,
 				BE54A7B31CE3468700E8822B /* SimpleTableView.xib in Resources */,
 				0855FB6D1CFD8571001BC502 /* coming_soon_100_100.png in Resources */,
@@ -306,6 +315,7 @@
 				BE1D6B181CE9C3E200FE6AD7 /* APLProductsViewController.m in Sources */,
 				BE1D6B1B1CE9C58B00FE6AD7 /* APLBrand.m in Sources */,
 				28A03C02171109C600EAB3E2 /* main.m in Sources */,
+				BE330F8D1D06CA7F00AD5194 /* APLAddingReviewViewController.m in Sources */,
 				0855FB691CFD7E1C001BC502 /* APLProductReviewViewController.m in Sources */,
 				BECB60991CF719370096804D /* APLAPIManager.m in Sources */,
 				28A03C06171109C600EAB3E2 /* APLAppDelegate.m in Sources */,

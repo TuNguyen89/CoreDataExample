@@ -15,14 +15,14 @@
 
 @end
 
-@implementation APLProducReviewTableViewCell
+@implementation APLProductReviewTableViewCell
 
 - (id)initWithNibName:(NSString *)nibNameOrNil {
     self = [super init];
     
     id objectFromNib = [[[NSBundle mainBundle] loadNibNamed:nibNameOrNil owner:self options:nil] objectAtIndex:0];
     //If the owner of nib loaded is a kind of APLProducReviewTableViewCell
-    if ([objectFromNib isKindOfClass:[APLProducReviewTableViewCell class]]) {
+    if ([objectFromNib isKindOfClass:[APLProductReviewTableViewCell class]]) {
         self = objectFromNib;
     } else {
         self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SystemCellId"];

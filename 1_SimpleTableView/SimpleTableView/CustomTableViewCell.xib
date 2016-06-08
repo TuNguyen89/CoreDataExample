@@ -37,7 +37,7 @@
                             <constraint firstAttribute="width" constant="80" id="E4q-IM-DvS"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwf-Ib-l9q" customClass="HCSStarRatingView">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwf-Ib-l9q" customClass="HCSStarRatingView">
                         <rect key="frame" x="5" y="70" width="75" height="15"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,7 +58,7 @@
                                 <real key="value" value="0.5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="YES"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="continuous" value="NO"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="accurateHalfStars" value="YES"/>
                         </userDefinedRuntimeAttributes>

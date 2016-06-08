@@ -10,6 +10,7 @@
 #import "APLBrand.h"
 #import "APLAPIManager.h"
 #import "APLCustomViewCells.h"
+#import "APLAddingReviewViewController.h"
 
 #define MAX_NUMBER_OF_REVIEW_PER_REQUEST        10
 
@@ -20,11 +21,6 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
     
 };
 
-
-@interface APLProductReviewViewController ()
-
-@end
-
 @implementation APLProductReviewViewController
 
 {
@@ -32,20 +28,40 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
     NSMutableArray<APLProductReview*> *productReviewList;
     NSArray                           *userList;
     __weak IBOutlet UITableView* tableViewReference;
+    __weak IBOutlet UILabel*           productName;
+    __weak IBOutlet UIImageView*       productImage;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"%@", self.view);
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     [self configureTableView];
     productReviewList = [NSMutableArray new];
     userList          = [NSMutableArray new];
     
     [self fetchUser];
     [self fetchingProductReviewByNumberOfReivew: MAX_NUMBER_OF_REVIEW_PER_REQUEST];
+    //Set the product name
+    productName.text = [productObjectId valueForKey:@"productName"];
     
+    //adding adde review button
+    UIBarButtonItem *addReviewBnt = [[UIBarButtonItem alloc] initWithTitle:@"Add review" style:UIBarButtonItemStylePlain target:self action:@selector(addReview:)];
+    
+    self.navigationItem.rightBarButtonItem = addReviewBnt;
+    
+}
+
+- (IBAction) addReview:(id)sender {
+    
+    APLAddingReviewViewController* addingReviewVC = [[APLAddingReviewViewController alloc] initWithNibName:@"AddingReviewViewController" bundle:nil];
+    [addingReviewVC handleAddReviewForProduct:productObjectId];
+    [self.navigationController pushViewController:addingReviewVC animated:TRUE];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,10 +98,10 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
     
     switch (indexPath.section) {
         case ProductSectionTypeCustomerReviews:
-            resultCell = [self buildTableViewCellForProductReview:tableView];
+            resultCell = [self buildTableViewCellForProductReviewSection:tableView];
             break;
         case ProductSectionTypeAboutThisItem:
-            resultCell = [self buildTableViewCellForAboutThisItem];
+            resultCell = [self buildTableViewCellForAboutThisItemSection];
             break;
         default:
             resultCell = [UITableViewCell new];
@@ -95,19 +111,19 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
     return resultCell;
 }
 
-- (UITableViewCell* ) buildTableViewCellForProductReview: (UITableView*) tableView {
+- (UITableViewCell* ) buildTableViewCellForProductReviewSection: (UITableView*) tableView {
     static NSString* reusedCellId = @"ReviewTbCellId";
-    APLProducReviewTableViewCell* reviewTableViewCell = [tableView dequeueReusableCellWithIdentifier:reusedCellId];
+    APLProductReviewTableViewCell* reviewTableViewCell = [tableView dequeueReusableCellWithIdentifier:reusedCellId];
     
     if (reviewTableViewCell) {
         return reviewTableViewCell;
     } else {
-        return [[APLProducReviewTableViewCell alloc] initWithNibName:@"ReviewTableViewCell"];
+        return [[APLProductReviewTableViewCell alloc] initWithNibName:@"ReviewTableViewCell"];
     }
 
 }
 
-- (UITableViewCell*) buildTableViewCellForAboutThisItem {
+- (UITableViewCell*) buildTableViewCellForAboutThisItemSection {
     APLDefaultCellWithAutoFitHeight* resultCell = [[APLDefaultCellWithAutoFitHeight alloc] initWithNibName:@"DefaultCellWithAutoFitHeight"];
     
     resultCell.autoFitTextLabel.text = @"Description";
@@ -119,9 +135,9 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
     
-    if ([cell isKindOfClass: [APLProducReviewTableViewCell class]])
+    if ([cell isKindOfClass: [APLProductReviewTableViewCell class]])
     {
-        APLProducReviewTableViewCell* reviewTableViewCell = (APLProducReviewTableViewCell*) cell;
+        APLProductReviewTableViewCell* reviewTableViewCell = (APLProductReviewTableViewCell*) cell;
         
         @try {
     
@@ -131,7 +147,7 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
                 if (!reviewTableViewCell)
                 {
                     //Create the new table view cell if it doesn't existing in table
-                    reviewTableViewCell = [[APLProducReviewTableViewCell alloc] initWithNibName:@"ReviewTableViewCell"];
+                    reviewTableViewCell = [[APLProductReviewTableViewCell alloc] initWithNibName:@"ReviewTableViewCell"];
 
                 }
 
@@ -148,7 +164,7 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
             
                 reviewTableViewCell.ratingBar.value  = (review.rating % 10) / 2.00;
 
-                if( indexPath.row == (productReviewList.count - 1)) {
+                if( (indexPath.row + 1) == (NSInteger) (productReviewList.count)) {
                     [self fetchingProductReviewByNumberOfReivew:MAX_NUMBER_OF_REVIEW_PER_REQUEST];
                 }
 
@@ -178,8 +194,6 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
 
 - (void)handleProductReview:(id) objectId {
     productObjectId = objectId;
-    
-    //Create the add review button
     
 }
 
@@ -253,14 +267,5 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
 
 #pragma mark - Delegate
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

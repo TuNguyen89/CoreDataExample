@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="APLAddingReviewViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Put your comment here!!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8k8-uZ-KOc">
+                    <rect key="frame" x="12" y="78" width="300" height="173"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-ItalicMT" family="Courier New" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-HT-8C2">
+                    <rect key="frame" x="12" y="65" width="50" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeK-tf-5b6">
+                    <rect key="frame" x="8" y="327" width="50" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGj-17-VQo">
+                    <rect key="frame" x="8" y="362" width="45.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPN-2r-7df">
+                    <rect key="frame" x="179" y="259" width="34" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDi-aZ-Vrj" customClass="HCSStarRatingView">
+                    <rect key="frame" x="215" y="262" width="75" height="15"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="4Je-yQ-42L"/>
+                        <constraint firstAttribute="height" constant="15" id="SiI-Fw-bfF"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="En4-fG-BUw">
+                    <rect key="frame" x="66" y="317" width="224" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-Qh-9GI">
+                    <rect key="frame" x="66" y="352" width="224" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GDi-aZ-Vrj" firstAttribute="top" secondItem="8k8-uZ-KOc" secondAttribute="bottom" constant="11" id="08a-G5-XQV"/>
+                <constraint firstItem="HeK-tf-5b6" firstAttribute="top" secondItem="8k8-uZ-KOc" secondAttribute="bottom" constant="76" id="0Xe-XZ-GTG"/>
+                <constraint firstItem="8k8-uZ-KOc" firstAttribute="top" secondItem="eIS-HT-8C2" secondAttribute="bottom" constant="1" id="3WV-iK-o8n"/>
+                <constraint firstItem="x7g-Qh-9GI" firstAttribute="trailing" secondItem="En4-fG-BUw" secondAttribute="trailing" id="7UN-e1-atx"/>
+                <constraint firstItem="x7g-Qh-9GI" firstAttribute="bottom" secondItem="nGj-17-VQo" secondAttribute="bottom" id="7gt-Z9-3or"/>
+                <constraint firstItem="HeK-tf-5b6" firstAttribute="leading" secondItem="nGj-17-VQo" secondAttribute="leading" id="7xy-Cm-ZBY"/>
+                <constraint firstItem="nGj-17-VQo" firstAttribute="top" secondItem="HeK-tf-5b6" secondAttribute="bottom" constant="14" id="97V-oF-DzP"/>
+                <constraint firstItem="nGj-17-VQo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="KBI-vd-vnA"/>
+                <constraint firstAttribute="trailing" secondItem="8k8-uZ-KOc" secondAttribute="trailing" constant="8" id="MZg-dQ-aCI"/>
+                <constraint firstItem="eIS-HT-8C2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="MmH-Bn-6BC"/>
+                <constraint firstItem="En4-fG-BUw" firstAttribute="trailing" secondItem="GDi-aZ-Vrj" secondAttribute="trailing" id="V9D-y5-LB2"/>
+                <constraint firstAttribute="trailing" secondItem="GDi-aZ-Vrj" secondAttribute="trailing" constant="30" id="WgQ-p8-pCo"/>
+                <constraint firstItem="8k8-uZ-KOc" firstAttribute="leading" secondItem="eIS-HT-8C2" secondAttribute="leading" id="bK6-35-C5d"/>
+                <constraint firstItem="En4-fG-BUw" firstAttribute="leading" secondItem="HeK-tf-5b6" secondAttribute="trailing" constant="8" id="ifX-48-dNG"/>
+                <constraint firstItem="En4-fG-BUw" firstAttribute="bottom" secondItem="HeK-tf-5b6" secondAttribute="bottom" id="iww-yo-ac3"/>
+                <constraint firstAttribute="bottom" secondItem="nGj-17-VQo" secondAttribute="bottom" constant="97" id="j0o-VB-DCw"/>
+                <constraint firstItem="VPN-2r-7df" firstAttribute="baseline" secondItem="GDi-aZ-Vrj" secondAttribute="baseline" id="q7j-5J-SFB"/>
+                <constraint firstItem="GDi-aZ-Vrj" firstAttribute="leading" secondItem="VPN-2r-7df" secondAttribute="trailing" constant="2" id="qt5-4h-7Xe"/>
+                <constraint firstItem="x7g-Qh-9GI" firstAttribute="leading" secondItem="nGj-17-VQo" secondAttribute="trailing" constant="12.5" id="uWa-ta-GVC"/>
+                <constraint firstItem="VPN-2r-7df" firstAttribute="top" secondItem="8k8-uZ-KOc" secondAttribute="bottom" constant="8" id="yMp-Mu-dIh"/>
+                <constraint firstItem="eIS-HT-8C2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="yjs-kd-DQj"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

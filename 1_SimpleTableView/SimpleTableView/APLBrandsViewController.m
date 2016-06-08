@@ -35,6 +35,9 @@
     [super viewDidLoad];
 
     
+    //TODO set the constraing for view of this controller:
+    
+    
     //Allocate a new mutable array
     brandsList = [NSMutableArray new];
     brandLoadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
@@ -87,6 +90,13 @@
     }];
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    //Change the table view as the view size
+    brandtableView.frame = CGRectMake(0, 0, size.width, size.height);
+    brandLoadingIndicator.center = brandtableView.center;
+}
+
 #pragma mark - UITableViewDataSource
 
 
@@ -124,14 +134,14 @@
 // for list of products
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    APLProductsViewController* productDetailVC = [[APLProductsViewController alloc]       initWithNibName:@"SimpleTableView" bundle:nil];
+    APLProductsViewController* productListVC = [[APLProductsViewController alloc]       initWithNibName:@"SimpleTableView" bundle:nil];
     
     //Get the selected brand
     NSString* selectedBrandId = [brandsList objectAtIndex:indexPath.row].brandId;
     
     // Let the product detail view controller know what brand indentifier it should get and show to user
-    [productDetailVC handleProductDetail:selectedBrandId];
-    [self.navigationController pushViewController:productDetailVC animated:YES];
+    [productListVC handleProductDetail:selectedBrandId];
+    [self.navigationController pushViewController:productListVC animated:TRUE];
 }
 
 #pragma mark - Initialize table view
@@ -150,8 +160,6 @@
     brandtableView = tableView;
     //Add to view
     [self.view addSubview:tableView];
-    
-    
 }
 
 #pragma mark - convert JSON to Brand list
