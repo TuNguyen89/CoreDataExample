@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SimpleTableView.xcodeproj">
+      location = "group:/Users/harveynash/Documents/CoreDataExample/1_SimpleTableView/FinalProject.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

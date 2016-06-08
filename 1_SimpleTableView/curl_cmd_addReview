@@ -1,0 +1,5 @@
+curl -X POST \
+  -H "X-Parse-Application-Id: ${FINAL_EXAM_APPLICATION_ID}" \
+  -H "X-Parse-Rest-Api-Key: ${FINAL_EXAM_REST_API_KEY}" \
+  -d '{"comment": "ABCXYZ", "rating": 7, "productID": { "__type": "Pointer", "className": "Product", "objectId": "riT63HTYyr" } }' \
+  https://api.parse.com/1/classes/Review

@@ -39,8 +39,8 @@
 		0855FB6F1CFEE65B001BC502 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		1E5E7406E0AF27AC6FBF4045 /* Pods_SimpleTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		286F762B177DDE930001B043 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		28A03BF2171109C600EAB3E2 /* SimpleTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		28A03BFD171109C600EAB3E2 /* SimpleTableView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTableView-Info.plist"; sourceTree = "<group>"; };
+		28A03BF2171109C600EAB3E2 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28A03BFD171109C600EAB3E2 /* FinalProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FinalProject-Info.plist"; sourceTree = "<group>"; };
 		28A03BFF171109C600EAB3E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		28A03C01171109C600EAB3E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28A03C04171109C600EAB3E2 /* APLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APLAppDelegate.h; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		28A03BF3171109C600EAB3E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28A03BF2171109C600EAB3E2 /* SimpleTableView.app */,
+				28A03BF2171109C600EAB3E2 /* FinalProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				286F762B177DDE930001B043 /* Images.xcassets */,
-				28A03BFD171109C600EAB3E2 /* SimpleTableView-Info.plist */,
+				28A03BFD171109C600EAB3E2 /* FinalProject-Info.plist */,
 				28A03BFE171109C600EAB3E2 /* InfoPlist.strings */,
 				28A03C01171109C600EAB3E2 /* main.m */,
 				BEFB15761CF8263700D07965 /* parseAPI.plist */,
@@ -189,9 +189,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		28A03BF1171109C600EAB3E2 /* SimpleTableView */ = {
+		28A03BF1171109C600EAB3E2 /* FinalProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28A03C15171109C600EAB3E2 /* Build configuration list for PBXNativeTarget "SimpleTableView" */;
+			buildConfigurationList = 28A03C15171109C600EAB3E2 /* Build configuration list for PBXNativeTarget "FinalProject" */;
 			buildPhases = (
 				444451E39261002668C407CE /* 📦 Check Pods Manifest.lock */,
 				28A03BEE171109C600EAB3E2 /* Sources */,
@@ -204,9 +204,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleTableView;
+			name = FinalProject;
 			productName = SimpleTableView;
-			productReference = 28A03BF2171109C600EAB3E2 /* SimpleTableView.app */;
+			productReference = 28A03BF2171109C600EAB3E2 /* FinalProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Apple Inc.";
 			};
-			buildConfigurationList = 28A03BED171109C600EAB3E2 /* Build configuration list for PBXProject "SimpleTableView" */;
+			buildConfigurationList = 28A03BED171109C600EAB3E2 /* Build configuration list for PBXProject "FinalProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -232,7 +232,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				28A03BF1171109C600EAB3E2 /* SimpleTableView */,
+				28A03BF1171109C600EAB3E2 /* FinalProject */,
 			);
 		};
 /* End PBXProject section */
@@ -412,10 +412,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
-				INFOPLIST_FILE = "SimpleTableView/SimpleTableView-Info.plist";
+				INFOPLIST_FILE = "SimpleTableView/FinalProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTableView";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FinalProject;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -436,10 +436,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
-				INFOPLIST_FILE = "SimpleTableView/SimpleTableView-Info.plist";
+				INFOPLIST_FILE = "SimpleTableView/FinalProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTableView";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FinalProject;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -448,7 +448,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28A03BED171109C600EAB3E2 /* Build configuration list for PBXProject "SimpleTableView" */ = {
+		28A03BED171109C600EAB3E2 /* Build configuration list for PBXProject "FinalProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28A03C13171109C600EAB3E2 /* Debug */,
@@ -457,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28A03C15171109C600EAB3E2 /* Build configuration list for PBXNativeTarget "SimpleTableView" */ = {
+		28A03C15171109C600EAB3E2 /* Build configuration list for PBXNativeTarget "FinalProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28A03C16171109C600EAB3E2 /* Debug */,

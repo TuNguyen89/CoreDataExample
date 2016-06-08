@@ -21,9 +21,6 @@
     UIActivityIndicatorView* productLoadingIndicator;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"%@", self.view);
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

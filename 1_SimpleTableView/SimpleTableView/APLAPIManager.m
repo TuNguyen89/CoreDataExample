@@ -64,6 +64,9 @@ static AFHTTPSessionManager* manager;
     
     manager = [AFHTTPSessionManager manager];
     
+    AFJSONRequestSerializer *jsonRequest = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
+    manager.requestSerializer = jsonRequest;
+    
     [manager.requestSerializer setValue:[parseProperties objectForKey:cacheControlKeyString]  forHTTPHeaderField:cacheControlKeyString];
     [manager.requestSerializer setValue:[parseProperties objectForKey:contentTypeKeyString] forHTTPHeaderField:contentTypeKeyString];
     [manager.requestSerializer setValue:[parseProperties objectForKey:applicationIdKeyString] forHTTPHeaderField:applicationIdKeyString];
@@ -120,6 +123,36 @@ static AFHTTPSessionManager* manager;
     NSURL* userURLRequest = [NSURL URLWithString: [NSString stringWithFormat: @"%@/%@", [parseProperties objectForKey:@"Parse-Base-URL"], [parseProperties objectForKey:@"User-Relative-URL"]]];
     
     [manager GET:userURLRequest.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask* task, id responseObject) {
+        completion(TRUE, responseObject, nil);
+        
+    } failure: ^(NSURLSessionDataTask* task , NSError* error) {
+        completion(FALSE, nil, error);
+    }];
+    
+}
+
+#pragma mark - POST a review
+
+- (void)postProductReviewReview:(NSDictionary *)postString completeBlock:(requestComppletionBlock)completion {
+    
+    NSURL* productReviewPost = [NSURL URLWithString: [NSString stringWithFormat: @"%@/%@", [parseProperties objectForKey:@"Parse-Base-URL"], [parseProperties objectForKey:@"Review-Relative-URL"]]];
+    
+    [manager POST:productReviewPost.absoluteString parameters:postString progress:nil success:^(NSURLSessionDataTask* task, id responseObject) {
+        completion(TRUE, responseObject, nil);
+        
+    } failure: ^(NSURLSessionDataTask* task , NSError* error) {
+        completion(FALSE, nil, error);
+    }];
+    
+}
+
+#pragma mark - Add a user
+
+- (void)postUser:(NSDictionary *)postString completeBlock:(requestComppletionBlock)completion {
+    
+    NSURL* userPost = [NSURL URLWithString: [NSString stringWithFormat: @"%@/%@", [parseProperties objectForKey:@"Parse-Base-URL"], [parseProperties objectForKey:@"User-Relative-URL"]]];
+    
+    [manager POST:userPost.absoluteString parameters:postString progress:nil success:^(NSURLSessionDataTask* task, id responseObject) {
         completion(TRUE, responseObject, nil);
         
     } failure: ^(NSURLSessionDataTask* task , NSError* error) {

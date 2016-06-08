@@ -11,5 +11,6 @@
 @interface APLProductReviewViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 - (void) handleProductReview: (id) objectId;
+- (void) reloadTableViewAfterAddReview;
 
 @end

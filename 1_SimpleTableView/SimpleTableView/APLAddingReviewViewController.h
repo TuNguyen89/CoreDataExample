@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface APLAddingReviewViewController : UIViewController
+@interface APLAddingReviewViewController : UIViewController <UIAlertViewDelegate>
 
 - (void) handleAddReviewForProduct: (id) objectId;
 

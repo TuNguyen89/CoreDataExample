@@ -27,4 +27,10 @@ typedef void(^requestComppletionBlock)(BOOL, id, NSError*);
 - (void) getProductReviewsByQueryString: (NSDictionary*) queryString completeBlock: (requestComppletionBlock) completion;
 - (void) getUserListAll: (requestComppletionBlock) completion;
 
+
+#pragma mark - POST a comment
+
+- (void) postProductReviewReview: (NSDictionary*) postString completeBlock: (requestComppletionBlock) completion;
+- (void) postUser: (NSDictionary*) postString completeBlock: (requestComppletionBlock) completion;
+
 @end

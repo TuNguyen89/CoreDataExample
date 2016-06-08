@@ -26,14 +26,9 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
 {
     id productObjectId;
     NSMutableArray<APLProductReview*> *productReviewList;
-    NSArray                           *userList;
-    __weak IBOutlet UITableView* tableViewReference;
+    __weak IBOutlet UITableView*       tableViewReference;
     __weak IBOutlet UILabel*           productName;
     __weak IBOutlet UIImageView*       productImage;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"%@", self.view);
 }
 
 
@@ -43,9 +38,7 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
     
     [self configureTableView];
     productReviewList = [NSMutableArray new];
-    userList          = [NSMutableArray new];
     
-    [self fetchUser];
     [self fetchingProductReviewByNumberOfReivew: MAX_NUMBER_OF_REVIEW_PER_REQUEST];
     //Set the product name
     productName.text = [productObjectId valueForKey:@"productName"];
@@ -55,6 +48,12 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
     
     self.navigationItem.rightBarButtonItem = addReviewBnt;
     
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    
+    [productReviewList removeAllObjects];
+    [self fetchingProductReviewByNumberOfReivew: MAX_NUMBER_OF_REVIEW_PER_REQUEST];
 }
 
 - (IBAction) addReview:(id)sender {
@@ -152,17 +151,10 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
                 }
 
                 reviewTableViewCell.userComment.text = review.comment;
+                [reviewTableViewCell.userComment sizeToFit];
+                reviewTableViewCell.userName.text = [[review.userObjectId objectForKey:@"userName"] isEqualToString:@""] ? [review.userObjectId objectForKey:@"email"] : [review.userObjectId objectForKey:@"userName"];
                 
-                [userList enumerateObjectsUsingBlock:^(id userObject, NSUInteger index, BOOL* stop) {
-                   
-                    if([[userObject objectForKey:@"objectId"] isEqual:[review.userObjectId objectForKey:@"objectId"]]) {
-                        reviewTableViewCell.userName.text = [userObject objectForKey:@"userName"] ? [userObject objectForKey:@"userName"] : [userObject objectForKey:@"email"];
-                        //Stop if we found the object ID
-                        *stop = TRUE;
-                    }
-                }];
-            
-                reviewTableViewCell.ratingBar.value  = (review.rating % 10) / 2.00;
+                reviewTableViewCell.ratingBar.value  = review.rating/2.00f;
 
                 if( (indexPath.row + 1) == (NSInteger) (productReviewList.count)) {
                     [self fetchingProductReviewByNumberOfReivew:MAX_NUMBER_OF_REVIEW_PER_REQUEST];
@@ -197,19 +189,6 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
     
 }
 
-- (void) fetchUser {
-    APLAPIManager* manager =  [APLAPIManager sharedManager];
-    [manager getUserListAll:^(BOOL isSuccess, id respondeObject, NSError* error) {
-       
-        if (isSuccess) {
-            userList = [respondeObject objectForKey:@"results"];
-            [tableViewReference reloadData];
-        } else {
-            NSLog(@"%@", error);
-        }
-    }];
-}
-
 - (void)fetchingProductReviewByNumberOfReivew: (NSInteger) numberOfReview {
     //Get the list of product review
     APLAPIManager* manager =  [APLAPIManager sharedManager];
@@ -220,6 +199,7 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
                                   @"where":@{@"comment": @{@"$exist": @true}}, // The comment also need be valid
                                   @"where": @{@"rating": @{@"$exist": @true}},
                                   @"order": @"-createdAt",
+                                  @"include": @"userID",
                                   @"limit": [NSNumber numberWithInteger:numberOfReview],
                                   @"skip": [NSNumber numberWithInteger:productReviewList.count]};
     
@@ -231,7 +211,7 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
             [tableViewReference reloadData];
         } else {
             
-            NSLog(@"%@", respondeObject);
+            NSLog(@"ERROR %@", error);
         }
         
     }];
@@ -262,7 +242,7 @@ typedef NS_ENUM(NSInteger, ProductSectionType) {
 
 - (void) configureTableView {
     tableViewReference.rowHeight = UITableViewAutomaticDimension;
-    tableViewReference.estimatedRowHeight = 160;
+    tableViewReference.estimatedRowHeight = 320;
 }
 
 #pragma mark - Delegate
